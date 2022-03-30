@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    card_view:cardCornerRadius="15dp"
+    style="@style/cardView"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.45"
+            tools:src="@tools:sample/avatars">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="36dp"
+            android:layout_toEndOf="@id/photo"
+            android:background="@drawable/mdi_chevron_right"
+            android:contentDescription="@string/description"
+            card_view:layout_constraintBottom_toBottomOf="@+id/photo"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="1.0"
+            card_view:layout_constraintStart_toEndOf="@+id/photo"
+            card_view:layout_constraintTop_toBottomOf="@+id/id"
+            card_view:layout_constraintVertical_bias="0.0">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/id"
+            style="@style/TextContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/photo"
+            android:textStyle="bold"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/photo"
+            card_view:layout_constraintTop_toTopOf="@+id/photo"
+            tools:text="@string/id" />
+
+        <TextView
+            android:id="@+id/username"
+            style="@style/TextContent.Small.Grey"
+            android:layout_width="wrap_content"
+            android:layout_height="31sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="36dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:maxLines="1"
+            card_view:drawableStartCompat="@drawable/ic_baseline_person_24"
+            card_view:layout_constraintBottom_toBottomOf="@+id/photo"
+            card_view:layout_constraintEnd_toStartOf="@+id/imageView"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toStartOf="@+id/id"
+            card_view:layout_constraintTop_toBottomOf="@+id/id"
+            card_view:layout_constraintVertical_bias="0.0"
+            tools:text="@string/username" />
+
+        <TextView
+            android:id="@+id/url"
+            style="@style/TextContent.Small.Grey"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginTop="12dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:maxLines="1"
+            card_view:drawableStartCompat="@drawable/ic_link"
+            card_view:layout_constraintBottom_toBottomOf="@+id/photo"
+            card_view:layout_constraintEnd_toEndOf="@+id/username"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toStartOf="@+id/username"
+            card_view:layout_constraintTop_toBottomOf="@+id/username"
+            card_view:layout_constraintVertical_bias="1.0"
+            tools:text="@string/url" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
